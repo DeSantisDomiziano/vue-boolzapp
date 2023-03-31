@@ -8,6 +8,8 @@
     --otherMessages: #d5f9ba;
     --aereaText: #f3eeea;
     --icon: #b1b1b1;
+    --light: #ffffff;
+    --drak: #414141;
 }
 /* #endregion COLOR */
 
@@ -37,11 +39,11 @@ section {
 }
 
 #menu {
-    min-width: 35%;
+    min-width: 38%;
 }
 
 #site_messages {
-    min-width: 65%;
+    min-width: 62%;
 }
 
 i {
@@ -54,4 +56,28 @@ i {
 
 .own_profile {
     background-color: var(--header);
+}
+
+#notification {
+    background-color: var(--news);
+}
+
+#icon {
+    min-height: 60px;
+    aspect-ratio: 1;
+    background-color: var(--light);
+    border-radius: 50%;
+}
+
+#icon i {
+    font-size: 1.5rem;
+    color: var(--news);
+}
+
+#text-notification a {
+    color: var(--drak);
+}
+
+#text-notification * {
+    font-size: 0.85rem;
 }
