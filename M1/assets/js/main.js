@@ -181,7 +181,7 @@ createApp({
     methods: {
         boh() {
             console.log('ciao');
-            console.log(this.contacts[0].messages[contacts.messages.length - 1]);
+            console.log(this.contacts[0].messages[contacts.messages.length - 1].date);
         }
     }
 }).mount('#app')
