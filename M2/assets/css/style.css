@@ -1,0 +1,141 @@
+/* #region COLOR */
+:root {
+    --headBG: #009688;
+    --bodyBG: #dcdbd2;
+    --header: #eaeaea;
+    --news: #8edafc;
+    --ownMessages: #d5f9ba;
+    --otherMessages: #d5f9ba;
+    --aereaText: #f3eeea;
+    --icon: #b1b1b1;
+    --light: #ffffff;
+    --drak: #414141;
+}
+/* #endregion COLOR */
+
+
+/* #region STRUCTURE LAYOUT */
+#app {
+    height: 100vh;
+    background-color: #009688;
+    background-image: linear-gradient( var(--headBG) 15vh, var(--bodyBG) 0px);
+}
+
+img {
+    max-width: 100%;
+    max-height: 60px;
+    border-radius: 50%;
+}
+
+.container {
+    height: 90vh;
+    margin: auto;
+    top: 3rem;
+    overflow: hidden;
+    background-color: var(--light);
+    padding: 0 !important;
+}
+
+section {
+    height: 100%;
+}
+
+#menu {
+    max-width: 38%;
+}
+
+#site_messages {
+    max-width: 62%;
+}
+
+i {
+    color: var(--icon);
+}
+/* #endregion STRUCTURE LAYOUT */
+
+
+/* #region LAYOUT */
+
+
+.own_profile {
+    background-color: var(--header);
+    height: 67px;
+}
+
+#notification {
+    background-color: var(--news);
+}
+
+#icon {
+    min-height: 60px;
+    aspect-ratio: 1;
+    background-color: var(--light);
+    border-radius: 50%;
+}
+
+#icon i {
+    font-size: 1.5rem;
+    color: var(--news);
+}
+
+#text-notification a {
+    color: var(--drak);
+}
+
+#text-notification * {
+    font-size: 0.85rem;
+}
+
+/* SEARCH */ 
+#search {
+    background: var(--aereaText);
+}
+
+#search ::placeholder {
+    color: var(--icon);
+}
+
+#contacts {
+    background: var(--light);
+    font-size: 0.85rem;
+    overflow: auto;
+    max-height: calc(100% - 210px)
+}
+
+#contacts .col.py-2.ms-2:hover {
+    background-color: var(--header);
+}
+
+#last_access {
+    bottom: 0;
+    left: 80px;
+    font-size: 0.75rem;
+}
+
+.main_page {
+    height: calc(90vh - (67px * 2) );
+    background-image: url(../img/mine.jpg);
+    overflow: auto;
+}
+
+#text_aerea i {
+    font-size: 1.5rem;
+}
+
+.mine,
+.other {
+    max-width: 75%;
+}
+
+.mine p {
+    padding: 0.75rem;
+    background-color: var(--ownMessages);
+    border-radius: 1rem;
+}
+
+.other p {
+    display: inline-block;
+    padding: 0.75rem;
+    background-color: var(--light);
+    border-radius: 1rem;
+}

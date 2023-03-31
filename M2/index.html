@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- VUE.JS3 -->
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- PERSONAL FILE PATH -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script defer src="./assets/js/main.js"></script>
+    <!-- BOOTSTRAP  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+
+    <div id="app">
+
+        <div class="container position-relative d-flex">
+
+            <!-- #MENU -->
+            <section class="border-2 border-end" id="menu">
+
+                <!-- OWN PROFILE -->
+                <div class="own_profile p-1">
+                    <div class="row justify-content-between">
+                        <div class="col">
+                            <img src="./assets/img/avatar_io.jpg" alt="">
+                            <span class="ps-2 text-capitalize fw-bolder">sofia</span>
+                        </div>
+                        <div class="col d-flex align-items-center justify-content-end gap-3 me-3">
+                            <i class="fa-sharp fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NOTIFICATION -->
+                <div id="notification" class="d-flex justify-content-start align-items-center p-2">
+                    <div id="icon" class="d-flex align-items-center justify-content-center">
+                        <i class="fa-sharp fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div id="text-notification" class="ms-2">
+                        <span class="fw-bold">Ricevi notifiche di nuovi messaggi</span> <br>
+                        <a href="#"> Attiva notifiche desktop</a>
+                    </div>
+                </div>
+                
+
+                <!-- SEARCH -->
+                <div id="search" class="p-2">
+                    <div class="input-group">
+                        <span class="input-group-text bg-light">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <div class="form-floating">
+                          <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Cerca o inizia una nuova chat">
+                          <label for="floatingInputGroup1"></label>
+                        </div>
+                      </div>
+                </div>
+
+                <!-- CONTACT -->
+                <div id="contacts" class="overflow-auto">
+                    <div class="row row-cols-1">
+                        <div class="col py-2 ms-2" v-for="(contact, index) in contacts" >
+                            <div class="picture float-start me-3">
+                                <img :src="'./assets' + contact.avatar" alt="">
+                            </div>
+                            <div class="info_user mt-2">
+                                <p class="ps-2 text-capitalize fw-bolder m-0">{{contact.name}}</p> 
+                                <span>{{ contact.messages[contact.messages.length - 1].message }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+            <!-- /#MENU -->
+
+            <!-- #SITE_MESSAGES -->
+            <section id="site_messages" class="w-100">
+
+                <div class="own_profile p-1 ">
+                    <div class="row justify-content-between">
+                        <div class="col position-relative">
+                            <img src="./assets/img/avatar_1.jpg " alt="">
+                            <span class="ps-2 text-capitalize fw-bolder">{{ contacts[0].name }}</span> <br>
+                            <span class="position-absolute" id="last_access">ultimo accesso alle: {{contacts[0].messages[contacts[0].messages.length - 1].date.slice(11, 16) }}</span>
+                        </div>
+                        <div class="col d-flex align-items-center justify-content-end gap-3 me-3">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="main_page p-3 d-flex flex-column">
+                    <div class="mine align-self-end ">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, consequuntur, quia exercitationem commodi molestias minus ducimus ratione obcaecati esse ipsa tempore cum nam ea, eaque nisi saepe quam? Assumenda incidunt ipsa quibusdam, fuga recusandae amet sunt. Nihil et accusantium, voluptas iure adipisci aliquam quam non, consectetur delectus, voluptatum tenetur! Molestiae!</p>
+                    </div>
+                    <div class="mine align-self-end ">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A architecto vero necessitatibus sed voluptas quam aliquid cupiditate doloribus modi iste minus, delectus ad nostrum dolore commodi sit dicta ipsa labore!</p>
+                    </div>
+                    <div class="other">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, unde natus, labore asperiores nulla ipsum dolore dignissimos laboriosam tempore quaerat delectus amet accusamus rem, excepturi molestias ipsa? Perspiciatis, cum assumenda ipsam aliquam voluptatum ullam nulla fugit eius harum voluptatibus et aperiam vel, aspernatur natus omnis. Dolores dolorem neque, nisi est repellat nesciunt aliquam, cumque soluta illum minus pariatur unde optio a non, voluptate deserunt similique commodi placeat reprehenderit quibusdam possimus sequi ex? Ullam eum alias est amet excepturi suscipit praesentium doloremque ut dolores, placeat quae ducimus quasi quos ea labore voluptatum nesciunt, impedit, dolorem quaerat illum dignissimos itaque iure ex! Quis doloribus repellendus nostrum vel, soluta non inventore accusantium temporibus natus labore autem, ad distinctio iure tenetur corporis molestiae accusamus eos cupiditate voluptatibus veniam adipisci ex porro! Quos commodi placeat rem autem exercitationem nobis? Qui nam maiores nesciunt ipsum doloremque in cumque ea architecto facere iure, praesentium recusandae. Est, itaque.</p>
+                    </div>
+                </div>
+
+                <div class="own_profile p-1 text-center" id="text_aerea">
+                    <div class="row h-100  align-items-center">
+                        <div class="col-2">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <div class="col-8">
+                            <input class="w-100 rounded rounded-2" type="text" name="" id="">
+                        </div>
+                        <div class="col-2">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /#SITE_MESSAGES -->
+        </div>
+
+    </div>
+    
+</body>
+</html>
