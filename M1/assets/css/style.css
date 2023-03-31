@@ -32,6 +32,7 @@ img {
     margin: auto;
     top: 3rem;
     overflow: hidden;
+    background-color: var(--light);
 }
 
 section {
@@ -39,11 +40,11 @@ section {
 }
 
 #menu {
-    min-width: 38%;
+    max-width: 38%;
 }
 
 #site_messages {
-    min-width: 62%;
+    max-width: 62%;
 }
 
 i {
@@ -85,9 +86,18 @@ i {
 
 /* SEARCH */ 
 #search {
-    background: var(--header);
+    background: var(--aereaText);
 }
 
 #search ::placeholder {
     color: var(--icon);
+}
+
+#contacts {
+    background: var(--light);
+    font-size: 0.85rem;
+}
+
+#contacts .col.py-2.ms-2:hover {
+    background-color: var(--header);
 }
