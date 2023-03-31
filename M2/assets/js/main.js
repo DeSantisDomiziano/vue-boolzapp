@@ -180,9 +180,13 @@ createApp({
     }
     },
     methods: {
-        boh() {
+        changeActiveContact(index) {
+            this.activeContact = index
+        },
+
+        prova() {
             console.log('ciao');
-            console.log(this.contacts[0].messages[this.contacts[0].messages.length - 1].date.slice(11, 16));
+            console.log(this.contacts[1].avatar);
         }
     }
 }).mount('#app')

@@ -68,7 +68,7 @@
                 <!-- CONTACT -->
                 <div id="contacts" class="overflow-auto">
                     <div class="row row-cols-1">
-                        <div class="col py-2 ms-2" v-for="(contact, index) in contacts" >
+                        <div class="col py-2 ms-2" v-for="(contact, index) in contacts" @click="changeActiveContact(index)">
                             <div class="picture float-start me-3">
                                 <img :src="'./assets' + contact.avatar" alt="">
                             </div>
@@ -89,9 +89,9 @@
                 <div class="own_profile p-1 ">
                     <div class="row justify-content-between">
                         <div class="col position-relative">
-                            <img src="./assets/img/avatar_1.jpg " alt="">
-                            <span class="ps-2 text-capitalize fw-bolder">{{ contacts[0].name }}</span> <br>
-                            <span class="position-absolute" id="last_access">ultimo accesso alle: {{contacts[0].messages[contacts[0].messages.length - 1].date.slice(11, 16) }}</span>
+                            <img :src="'./assets' + contacts[activeContact].avatar " alt="">
+                            <span class="ps-2 text-capitalize fw-bolder">{{ contacts[activeContact].name }}</span> <br>
+                            <span class="position-absolute" id="last_access">ultimo accesso alle: {{contacts[activeContact].messages[contacts[activeContact].messages.length - 1].date.slice(11, 16) }}</span>
                         </div>
                         <div class="col d-flex align-items-center justify-content-end gap-3 me-3">
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -101,8 +101,6 @@
                     </div>
                 </div>
 
-
-                <!--  -->
 
                 <div class="main_page p-3 d-flex flex-column">
                     <div :class=" messages.status === 'sent' ? 'mine  align-self-end' : 'other'" v-for="messages in contacts[activeContact].messages">
