@@ -59,6 +59,7 @@ i {
 
 .own_profile {
     background-color: var(--header);
+    height: 67px;
 }
 
 #notification {
@@ -97,8 +98,25 @@ i {
 #contacts {
     background: var(--light);
     font-size: 0.85rem;
+    overflow: auto;
+    max-height: 100%
 }
 
 #contacts .col.py-2.ms-2:hover {
     background-color: var(--header);
+}
+
+#last_access {
+    bottom: 0;
+    left: 80px;
+}
+
+.main_page {
+    height: calc(90vh - (67px * 2) );
+    background-image: url(../img/mine.jpg);
+    overflow: auto;
+}
+
+#text_aerea i {
+    font-size: 1.5rem;
 }

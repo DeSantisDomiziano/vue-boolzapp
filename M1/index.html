@@ -20,10 +20,10 @@
 
     <div id="app">
 
-        <div class="container position-relative">
+        <div class="container position-relative d-flex">
 
             <!-- #MENU -->
-            <section class="float-start border-2 border-end" id="menu">
+            <section class="border-2 border-end" id="menu">
 
                 <!-- OWN PROFILE -->
                 <div class="own_profile p-1">
@@ -66,15 +66,15 @@
                 </div>
 
                 <!-- CONTACT -->
-                <div id="contacts" class="overflow-hidden">
+                <div id="contacts" class="overflow-auto">
                     <div class="row row-cols-1">
-                        <div class="col py-2 ms-2" v-for="contact in contacts" >
+                        <div class="col py-2 ms-2" v-for="(contact, index) in contacts" >
                             <div class="picture float-start me-3">
                                 <img :src="'./assets' + contact.avatar" alt="">
                             </div>
                             <div class="info_user mt-2">
                                 <p class="ps-2 text-capitalize fw-bolder m-0">{{contact.name}}</p> 
-                                <span>{{ contact.messages[1].message }}</span>
+                                <span>{{ contact.messages[contact.messages.length - 1].message }}</span>
                             </div>
                         </div>
                     </div>
@@ -84,8 +84,41 @@
             <!-- /#MENU -->
 
             <!-- #SITE_MESSAGES -->
-            <section id="site_messages">
-                
+            <section id="site_messages" class="w-100">
+
+                <div class="own_profile p-1 ">
+                    <div class="row justify-content-between">
+                        <div class="col position-relative">
+                            <img src="./assets/img/avatar_1.jpg " alt="">
+                            <span class="ps-2 text-capitalize fw-bolder">{{ contacts[0].name }}</span> <br>
+                            <span class="position-absolute" id="last_access">{{ }}</span>
+                        </div>
+                        <div class="col d-flex align-items-center justify-content-end gap-3 me-3">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="main_page" @click="boh()">
+
+                </div>
+
+                <div class="own_profile p-1 text-center" id="text_aerea">
+                    <div class="row h-100  align-items-center">
+                        <div class="col-2">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <div class="col-8">
+                            <input class="w-100 rounded rounded-4" type="text" name="" id="">
+                        </div>
+                        <div class="col-2">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                    </div>
+                </div>
             </section>
             <!-- /#SITE_MESSAGES -->
         </div>

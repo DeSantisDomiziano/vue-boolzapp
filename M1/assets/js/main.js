@@ -177,5 +177,11 @@ createApp({
             }
         ]
     }
-}
+    },
+    methods: {
+        boh() {
+            console.log('ciao');
+            console.log(this.contacts[0].messages[contacts.messages.length - 1]);
+        }
+    }
 }).mount('#app')
