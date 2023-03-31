@@ -91,7 +91,7 @@
                         <div class="col position-relative">
                             <img src="./assets/img/avatar_1.jpg " alt="">
                             <span class="ps-2 text-capitalize fw-bolder">{{ contacts[0].name }}</span> <br>
-                            <span class="position-absolute" id="last_access">{{ }}</span>
+                            <span class="position-absolute" id="last_access">ultimo accesso alle: {{contacts[0].messages[contacts[0].messages.length - 1].date.slice(11, 16) }}</span>
                         </div>
                         <div class="col d-flex align-items-center justify-content-end gap-3 me-3">
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -102,8 +102,16 @@
                 </div>
 
 
-                <div class="main_page" @click="boh()">
-
+                <div class="main_page p-3 d-flex flex-column">
+                    <div class="mine align-self-end ">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, consequuntur, quia exercitationem commodi molestias minus ducimus ratione obcaecati esse ipsa tempore cum nam ea, eaque nisi saepe quam? Assumenda incidunt ipsa quibusdam, fuga recusandae amet sunt. Nihil et accusantium, voluptas iure adipisci aliquam quam non, consectetur delectus, voluptatum tenetur! Molestiae!</p>
+                    </div>
+                    <div class="mine align-self-end ">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A architecto vero necessitatibus sed voluptas quam aliquid cupiditate doloribus modi iste minus, delectus ad nostrum dolore commodi sit dicta ipsa labore!</p>
+                    </div>
+                    <div class="other">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, unde natus, labore asperiores nulla ipsum dolore dignissimos laboriosam tempore quaerat delectus amet accusamus rem, excepturi molestias ipsa? Perspiciatis, cum assumenda ipsam aliquam voluptatum ullam nulla fugit eius harum voluptatibus et aperiam vel, aspernatur natus omnis. Dolores dolorem neque, nisi est repellat nesciunt aliquam, cumque soluta illum minus pariatur unde optio a non, voluptate deserunt similique commodi placeat reprehenderit quibusdam possimus sequi ex? Ullam eum alias est amet excepturi suscipit praesentium doloremque ut dolores, placeat quae ducimus quasi quos ea labore voluptatum nesciunt, impedit, dolorem quaerat illum dignissimos itaque iure ex! Quis doloribus repellendus nostrum vel, soluta non inventore accusantium temporibus natus labore autem, ad distinctio iure tenetur corporis molestiae accusamus eos cupiditate voluptatibus veniam adipisci ex porro! Quos commodi placeat rem autem exercitationem nobis? Qui nam maiores nesciunt ipsum doloremque in cumque ea architecto facere iure, praesentium recusandae. Est, itaque.</p>
+                    </div>
                 </div>
 
                 <div class="own_profile p-1 text-center" id="text_aerea">
@@ -112,7 +120,7 @@
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div class="col-8">
-                            <input class="w-100 rounded rounded-4" type="text" name="" id="">
+                            <input class="w-100 rounded rounded-2" type="text" name="" id="">
                         </div>
                         <div class="col-2">
                             <i class="fa-solid fa-microphone"></i>

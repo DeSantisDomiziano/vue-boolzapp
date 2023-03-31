@@ -99,7 +99,7 @@ i {
     background: var(--light);
     font-size: 0.85rem;
     overflow: auto;
-    max-height: 100%
+    max-height: calc(100% - 210px)
 }
 
 #contacts .col.py-2.ms-2:hover {
@@ -109,6 +109,7 @@ i {
 #last_access {
     bottom: 0;
     left: 80px;
+    font-size: 0.75rem;
 }
 
 .main_page {
@@ -119,4 +120,22 @@ i {
 
 #text_aerea i {
     font-size: 1.5rem;
+}
+
+.mine,
+.other {
+    max-width: 75%;
+}
+
+.mine p {
+    padding: 0.75rem;
+    background-color: var(--ownMessages);
+    border-radius: 1rem;
+}
+
+.other p {
+    display: inline-block;
+    padding: 0.75rem;
+    background-color: var(--light);
+    border-radius: 1rem;
 }

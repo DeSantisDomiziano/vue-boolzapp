@@ -116,7 +116,7 @@ createApp({
             },
             {
                 name: 'Claudia',
-                avatar: '/img/avatar_5.jpg',
+                avatar: '/img/avatar_6.jpg',
                 visible: true,
                 messages: [
                     {
@@ -181,7 +181,10 @@ createApp({
     methods: {
         boh() {
             console.log('ciao');
-            console.log(this.contacts[0].messages[contacts.messages.length - 1].date);
+            console.log(this.contacts[0].messages[this.contacts[0].messages.length - 1].date.slice(11, 16));
         }
     }
 }).mount('#app')
+
+
+/* contacts.messages.length - 1 */
