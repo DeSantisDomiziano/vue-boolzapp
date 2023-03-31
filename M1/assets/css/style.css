@@ -1,0 +1,57 @@
+/* #region COLOR */
+:root {
+    --headBG: #009688;
+    --bodyBG: #dcdbd2;
+    --header: #eaeaea;
+    --news: #8edafc;
+    --ownMessages: #d5f9ba;
+    --otherMessages: #d5f9ba;
+    --aereaText: #f3eeea;
+    --icon: #b1b1b1;
+}
+/* #endregion COLOR */
+
+
+/* #region STRUCTURE LAYOUT */
+#app {
+    height: 100vh;
+    background-color: #009688;
+    background-image: linear-gradient( var(--headBG) 15vh, var(--bodyBG) 0px);
+}
+
+img {
+    max-width: 100%;
+    max-height: 60px;
+    border-radius: 50%;
+}
+
+.container {
+    height: 90vh;
+    margin: auto;
+    top: 3rem;
+    overflow: hidden;
+}
+
+section {
+    height: 100%;
+}
+
+#menu {
+    min-width: 35%;
+}
+
+#site_messages {
+    min-width: 65%;
+}
+
+i {
+    color: var(--icon);
+}
+/* #endregion STRUCTURE LAYOUT */
+
+
+/* #region LAYOUT */
+
+.own_profile {
+    background-color: var(--header);
+}
