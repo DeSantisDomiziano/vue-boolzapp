@@ -99,7 +99,7 @@ i {
     background: var(--light);
     font-size: 0.85rem;
     overflow: auto;
-    max-height: calc(100% - 210px)
+    height: calc(90vh - 200px);
 }
 
 #contacts .col.py-2.ms-2:hover {
@@ -138,4 +138,8 @@ i {
     padding: 0.75rem;
     background-color: var(--light);
     border-radius: 1rem;
+}
+
+p span {
+    font-size: 0.75rem;
 }
