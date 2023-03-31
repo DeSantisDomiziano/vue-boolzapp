@@ -54,6 +54,7 @@ i {
 
 /* #region LAYOUT */
 
+
 .own_profile {
     background-color: var(--header);
 }
@@ -80,4 +81,13 @@ i {
 
 #text-notification * {
     font-size: 0.85rem;
+}
+
+/* SEARCH */ 
+#search {
+    background: var(--header);
+}
+
+#search ::placeholder {
+    color: var(--icon);
 }
