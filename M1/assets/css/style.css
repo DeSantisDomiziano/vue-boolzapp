@@ -33,6 +33,7 @@ img {
     top: 3rem;
     overflow: hidden;
     background-color: var(--light);
+    padding: 0 !important;
 }
 
 section {
