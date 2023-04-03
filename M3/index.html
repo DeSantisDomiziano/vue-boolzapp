@@ -115,13 +115,13 @@
 
                 <div class="own_profile p-1 text-center" id="text_aerea">
                     <div class="row h-100  align-items-center">
-                        <div class="col-2">
+                        <div class="col-1">
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
-                        <div class="col-8">
-                            <input class="w-100 rounded rounded-2" type="text" name="" id="">
+                        <div class="col-10">
+                            <input class="w-100 rounded rounded-2" type="text" v-model="newMessage.message" @keyup.enter="addNewMessage(index)">
                         </div>
-                        <div class="col-2">
+                        <div class="col-1">
                             <i class="fa-solid fa-microphone"></i>
                         </div>
                     </div>
