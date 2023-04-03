@@ -197,9 +197,8 @@ createApp({
                 }
 
                 this.contacts[activeContact].messages.push(addNewMessage)
-                
 
-
+                document.getElementById('areaText').value = ''
             } 
 
         },
