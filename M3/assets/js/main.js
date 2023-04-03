@@ -200,30 +200,23 @@ createApp({
 
                 document.getElementById('areaText').value = ''
 
-                setTimeout(this.contactMessge, 1000)
+                setTimeout(this.contactMessage, 1000)
             } 
 
         },
 
-        contactMessge() {
+        contactMessage(activeContact) {
 
             const currentDate = new Date()
 
-            const addNewMessage = {
+            const addNewMessageContact = {
                 date: `(currentDate.getDay() <= 9 ) ? '0'  : ''${currentDate.getDay()}/${currentDate.getMonth() +1}/${currentDate.getFullYear()} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`,
                 message: 'ok',
                 status: 'received'
             }
-            this.contacts[activeContact].messages.push(addNewMessage)
+
+            this.contacts[activeContact].messages.push(addNewMessageContact)
 
         },
-
-        prova() {
-            console.log('ciao');
-            console.log(this.contacts[1].avatar);
-        }
-    }
+    },
 }).mount('#app')
-
-
-/* contacts.messages.length - 1 */
