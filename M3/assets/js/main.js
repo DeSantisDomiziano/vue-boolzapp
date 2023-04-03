@@ -13,12 +13,6 @@ const { createApp } = Vue
 createApp({
     data() {
       return {
-        newMessage: {
-
-                date:'',
-                message: '',
-                status: '',
-            },
         activeContact: 0,
         contacts: [
             {
@@ -190,11 +184,29 @@ createApp({
             this.activeContact = index
         },
 
-        addNewMessage(index) {
+        addNewMessage(activeContact) {
 
-            if(this.newMessage.message.length > 0) {
+            const newMessage = document.getElementById('areaText').value
+
+            const addNewMessage = {
+                date: `${this.contacts[activeContact].messages.date}`,
+                message: newMessage,
+                status: 'sent'
+            }
+
+            console.log(addNewMessage);
+            
+            if(newMessage.length > 0) {
+
+                const addNewMessage = {
+                    date: this.contacts[activeContact].messages.date,
+                    message: newMessage,
+                    status: 'sent'
+                }
+
+                this.contacts[activeContact].messages.push(addNewMessage)
                 
-                this.contacts[index].messages.push(this.newMessage)
+
 
             } 
 
