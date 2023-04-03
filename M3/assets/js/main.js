@@ -205,17 +205,20 @@ createApp({
 
         },
 
-        contactMessage(activeContact) {
+        contactMessage() {
 
             const currentDate = new Date()
 
+            
             const addNewMessageContact = {
-                date: `(currentDate.getDay() <= 9 ) ? '0'  : ''${currentDate.getDay()}/${currentDate.getMonth() +1}/${currentDate.getFullYear()} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`,
+                date: `${(currentDate.getDay() <= 9 ) ? '0'  : ''}${currentDate.getDay()}/${(currentDate.getMonth() <= 9 ) ? '0'  : ''}${currentDate.getMonth() +1}/${currentDate.getFullYear()} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`,
                 message: 'ok',
                 status: 'received'
             }
 
-            this.contacts[activeContact].messages.push(addNewMessageContact)
+            console.log(currentDate.getMonth() +1);
+
+            this.contacts[this.activeContact].messages.push(addNewMessageContact)
 
         },
     },
