@@ -186,7 +186,7 @@ createApp({
 
         addNewMessage(activeContact) {
 
-            const newMessage = document.getElementById('areaText').value
+            const newMessage = document.getElementById('areaText').value.trim()
             
             if(newMessage.length > 0) {
 
@@ -215,8 +215,6 @@ createApp({
                 message: 'ok',
                 status: 'received'
             }
-
-            console.log(currentDate.getMonth() +1);
 
             this.contacts[this.activeContact].messages.push(addNewMessageContact)
 
