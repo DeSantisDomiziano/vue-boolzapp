@@ -199,7 +199,22 @@ createApp({
                 this.contacts[activeContact].messages.push(addNewMessage)
 
                 document.getElementById('areaText').value = ''
+
+                setTimeout(this.contactMessge, 1000)
             } 
+
+        },
+
+        contactMessge() {
+
+            const currentDate = new Date()
+
+            const addNewMessage = {
+                date: `(currentDate.getDay() <= 9 ) ? '0'  : ''${currentDate.getDay()}/${currentDate.getMonth() +1}/${currentDate.getFullYear()} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`,
+                message: 'ok',
+                status: 'received'
+            }
+            this.contacts[activeContact].messages.push(addNewMessage)
 
         },
 
