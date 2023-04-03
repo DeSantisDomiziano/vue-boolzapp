@@ -187,19 +187,11 @@ createApp({
         addNewMessage(activeContact) {
 
             const newMessage = document.getElementById('areaText').value
-
-            const addNewMessage = {
-                date: `${this.contacts[activeContact].messages[this.contacts[activeContact].messages.length - 1].date.slice(11, 16)}`,
-                message: newMessage,
-                status: 'sent'
-            }
-
-            console.log(addNewMessage);
             
             if(newMessage.length > 0) {
 
                 const addNewMessage = {
-                    date: this.contacts[activeContact].messages.date,
+                    date: `${this.contacts[activeContact].messages[this.contacts[activeContact].messages.length - 1].date}`,
                     message: newMessage,
                     status: 'sent'
                 }
