@@ -225,13 +225,11 @@ createApp({
         
 
         filter() {
-            this.contacts.forEach((contact, index) => {
+            this.contacts.forEach(contact => {
                 if(contact.name.toLowerCase().includes(this.search.toLowerCase())) {
                     contact.visible = true
-                    console.log('ciao sono veoro');
                 } else {
                     contact.visible = false
-                    console.log('ciao sono veoro');
                 }
             });
         },
