@@ -13,6 +13,7 @@ const { createApp } = Vue
 createApp({
     data() {
       return {
+        search: '',
         activeContact: 0,
         contacts: [
             {
@@ -187,11 +188,12 @@ createApp({
         addNewMessage(activeContact) {
 
             const newMessage = document.getElementById('areaText').value.trim()
-            
+            const currentDate = new Date()
+
             if(newMessage.length > 0) {
 
                 const addNewMessage = {
-                    date: `${this.contacts[activeContact].messages[this.contacts[activeContact].messages.length - 1].date}`,
+                    date: `${(currentDate.getDay() <= 9 ) ? '0'  : ''}${currentDate.getDay()}/${(currentDate.getMonth() <= 9 ) ? '0'  : ''}${currentDate.getMonth() +1}/${currentDate.getFullYear()} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`,
                     message: newMessage,
                     status: 'sent'
                 }
@@ -207,8 +209,8 @@ createApp({
 
         contactMessage() {
 
+            
             const currentDate = new Date()
-
             
             const addNewMessageContact = {
                 date: `${(currentDate.getDay() <= 9 ) ? '0'  : ''}${currentDate.getDay()}/${(currentDate.getMonth() <= 9 ) ? '0'  : ''}${currentDate.getMonth() +1}/${currentDate.getFullYear()} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`,
@@ -220,30 +222,19 @@ createApp({
 
         },
 
-        search() {
-            const input = document.getElementById('floatingInputGroup1')
-            const filter = input.value.toLowerCase()
-            const containerNameUser = document.querySelectorAll('.info_user.mt-2')
+        
 
-            containerNameUser.forEach((contact, index) => {
-                
-                    console.log(contact, index)
-
-                    let elementP = contact.getElementsByTagName('p')
-                    console.log(elementP);
-                    const textValue = elementP[0].innerText
-                    console.log(textValue);
-
-                    console.log(textValue.toLowerCase().indexOf(filter));
-
-                    if(textValue.toLowerCase().indexOf(filter) > -1) {
-                        this.contacts[index].visible = true
-                    } else {
-                        this.contacts[index].visible = false
-                    }
-                    
-                
-            })
-        }
+        filter() {
+            this.contacts.forEach((contact, index) => {
+                if(contact.name.toLowerCase().includes(this.search.toLowerCase())) {
+                    contact.visible = true
+                    console.log('ciao sono veoro');
+                } else {
+                    contact.visible = false
+                    console.log('ciao sono veoro');
+                }
+            });
+        },
+     
     },
 }).mount('#app')
