@@ -219,5 +219,32 @@ createApp({
             this.contacts[this.activeContact].messages.push(addNewMessageContact)
 
         },
+
+        search() {
+            const input = document.getElementById('floatingInputGroup1')
+            const filter = input.value.toLowerCase()
+            const containerNameUser = document.querySelectorAll('.info_user.mt-2')
+            /* const nameUser = document.querySelectorAll('.ps-2.text-capitalize.fw-bolder.m-0') */
+
+            containerNameUser.forEach((contact, index) => {
+                
+                    console.log(contact, index)
+
+                    let elementP = contact.getElementsByTagName('p')
+                    console.log(elementP);
+                    const textValue = elementP[0].innerText
+                    console.log(textValue);
+
+                    if(textValue.toLowerCase().indexOf(filter) > -1) {
+                        contact.visible = true
+                        console.log(contact.visible, 'vero')
+                    } else {
+                        contact.visible = false
+                        console.log(contact.visible, 'falso')
+                    }
+                    
+                
+            })
+        }
     },
 }).mount('#app')
