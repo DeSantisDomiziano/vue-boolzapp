@@ -224,7 +224,6 @@ createApp({
             const input = document.getElementById('floatingInputGroup1')
             const filter = input.value.toLowerCase()
             const containerNameUser = document.querySelectorAll('.info_user.mt-2')
-            /* const nameUser = document.querySelectorAll('.ps-2.text-capitalize.fw-bolder.m-0') */
 
             containerNameUser.forEach((contact, index) => {
                 
@@ -235,12 +234,12 @@ createApp({
                     const textValue = elementP[0].innerText
                     console.log(textValue);
 
+                    console.log(textValue.toLowerCase().indexOf(filter));
+
                     if(textValue.toLowerCase().indexOf(filter) > -1) {
-                        contact.visible = true
-                        console.log(contact.visible, 'vero')
+                        this.contacts[index].visible = true
                     } else {
-                        contact.visible = false
-                        console.log(contact.visible, 'falso')
+                        this.contacts[index].visible = false
                     }
                     
                 

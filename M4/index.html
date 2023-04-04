@@ -59,7 +59,7 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </span>
                         <div class="form-floating">
-                          <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Cerca o inizia una nuova chat"  v-model="search()">
+                          <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Cerca o inizia una nuova chat" @keyup="search" >
                           <label for="floatingInputGroup1"></label>
                         </div>
                       </div>
@@ -68,8 +68,8 @@
                 <!-- CONTACT -->
                 <div id="contacts" class="overflow-auto">
                     <div class="row row-cols-1">
-                        <div class="col py-2" v-for="(contact, index) in contacts" @click="changeActiveContact(index)">
-                            <div v-if="contact.visible === true">
+                        <div v-for="(contact, index) in contacts" @click="changeActiveContact(index)">
+                            <div v-if="contact.visible === true" class="col py-2">
                                 <div class="picture float-start me-3">
                                     <img :src="'./assets' + contact.avatar" alt="">
                                 </div>

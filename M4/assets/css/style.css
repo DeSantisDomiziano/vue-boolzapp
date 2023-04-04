@@ -99,7 +99,7 @@ i {
     background: var(--light);
     font-size: 0.85rem;
     overflow: auto;
-    height: calc(90vh - 210px);
+    height: calc(96vh - 285px);
 }
 
 #contacts > .row {
